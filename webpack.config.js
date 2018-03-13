@@ -1,37 +1,21 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./src/main.js', './src/theme.scss'],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader?indentedSyntax'
-        ],
+        test: /theme.scss$/,
+        use: ['extracted-loader'].concat(ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader']
+        })),
       },
       {
         test: /\.vue$/,
@@ -69,6 +53,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: '[name].css',
+    }),
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
