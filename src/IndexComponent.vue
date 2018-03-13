@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn btn-primary">Demo Bootstrap Theme Button</button>
+        <a href="/page" class="btn btn-primary">Demo Bootstrap Theme Button</a>
         {{ msg }}
     </div>
 </template>

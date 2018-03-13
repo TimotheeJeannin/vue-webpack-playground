@@ -3,7 +3,11 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: ['./src/index.js', './src/theme.scss'],
+    entry: {
+        page: './src/page.js',
+        index: './src/index.js',
+        theme: './src/theme.scss'
+    },
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
