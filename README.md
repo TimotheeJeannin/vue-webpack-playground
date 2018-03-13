@@ -24,5 +24,5 @@ python3 -m venv env
 ./env/bin/pip install -r requirements.txt
 
 # run the flask application
-FLASK_APP=main.py ./env/bin/flask run
+FLASK_APP=src/main.py ./env/bin/flask run
 ```
