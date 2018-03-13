@@ -16,12 +16,20 @@
             <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
             <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
         </ul>
-        <button class="btn btn-primary">Demo Bootstrap Theme Button</button>
+        <br/>
+        <label>
+            <input class="form-control" v-model="msg"/>
+        </label>
+        <br/>
+        <another-component :msg="msg"/>
     </div>
 </template>
 
 <script>
+    import AnotherComponent from './AnotherComponent'
+
     export default {
+        components: {AnotherComponent},
         name: 'app',
         data() {
             return {
