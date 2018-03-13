@@ -21,15 +21,15 @@
             <input class="form-control" v-model="msg"/>
         </label>
         <br/>
-        <another-component :msg="msg"/>
+        <index-component :msg="msg"/>
     </div>
 </template>
 
 <script>
-    import AnotherComponent from './AnotherComponent'
+    import IndexComponent from './IndexComponent'
 
     export default {
-        components: {AnotherComponent},
+        components: {IndexComponent},
         name: 'app',
         data() {
             return {
