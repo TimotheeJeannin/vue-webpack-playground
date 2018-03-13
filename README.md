@@ -1,8 +1,8 @@
 # vue-webpack-playground
 
-> A Vue.js project
+> A repository where I can test various ways to combine vue, flask and webpack.
 
-## Build Setup
+## Frontend setup
 
 ``` bash
 # install dependencies
@@ -15,4 +15,14 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Backend setup
+
+``` bash
+# install dependencies
+python3 -m venv env
+./env/bin/pip install --upgrade pip
+./env/bin/pip install -r requirements.txt
+
+# run the flask application
+FLASK_APP=main.py ./env/bin/flask run
+```
